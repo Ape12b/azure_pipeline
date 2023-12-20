@@ -8,7 +8,24 @@ The use case for this project is building an end to end solution by ingesting th
 
 ## Pipeline development
 
-The first step in developing a pipeline on Azure is to create a resource group that houses all the resources that will be used in the project.
+The first step in developing a pipeline on Azure is to create a resource group that houses all the resources that will be used in the project. We can add resources as per our requirements on this resource group. In this project we'll start with a storage. This will have a hierarchical namespace. Next we'll create a databricks instance. Now, we need to register an app in order to have connection between the databricks instance and the created storage group. In Azure Active Directory (Azure AD), when you register an application (also known as creating an app registration), two important identifiers are generated: the Application (client) ID (also referred to as App ID) and the Directory (tenant) ID.
+
+- **Application (client) ID (App ID)**:
+
+The Application ID, commonly known as the App ID or Client ID, is a unique identifier assigned to your application during the registration process. It is used by your application to authenticate itself to Azure AD when making requests. Think of it as a public identifier for your application.
+
+- **Directory (tenant) ID:**
+
+The Directory ID, also known as the Tenant ID, is a unique identifier for the Azure AD directory to which the application belongs. In Azure AD, a tenant is a dedicated instance of the directory service that an organization receives when it signs up for an Azure account. The Tenant ID identifies the Azure AD directory that contains the application registration.
+In summary:
+
+App ID (Application ID): Identifies the application itself. This ID is public and can be distributed with the application.
+
+Tenant ID (Directory ID): Identifies the Azure AD directory in which the application is registered. This ID is specific to the Azure AD directory and is not meant to be shared publicly.
+
+These identifiers are crucial for authentication and authorization processes when interacting with Azure AD and other Azure services. When you configure authentication for your application, you often need to provide the App ID and Tenant ID to establish a trust relationship between your application and Azure AD. Additionally, these identifiers are commonly used when acquiring access tokens for accessing Azure resources on behalf of the application.
+
+Apart from this we also need the secret value associated with the app during it's cration.
 
 ## Overview of Azure Services used
 
@@ -98,3 +115,4 @@ Power BI is a suite of business analytics tools that enables organizations to vi
 ## Notes:
 
 - In setting up storage, make sure to enable **hierarchical namespace** since enabling the Hierarchical Namespace in Azure Storage enhances data organization, improves compatibility with existing tools and frameworks, and provides benefits for big data analytics workloads. It is particularly useful for organizations dealing with large-scale data storage and processing requirements.
+- Even if you're the subscription / keyvault owner - you need to assign yourself as the "Key Vault Administrator" role in order to cerate/add secrets.
