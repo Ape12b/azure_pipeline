@@ -5,7 +5,7 @@
 The use case for this project is building an end to end solution by ingesting the tables from on-premise SQL Server database using Azure Data Factory and then storing the data in Azure Data Lake. Azure databricks is used for data transformation. Microsoft Power BI is integrated with Azure synapse analytics to build an interactive dashboard. Azure Active Directory (AAD) and Azure Key Vaults are used for the monitoring and data governance.
 
 <div style="text-align:center">
-  ![Data Pipeline](research/images/pipeline.png)
+  ![Data Pipeline](./research/images/pipeline.png)
 </div>
 
 
