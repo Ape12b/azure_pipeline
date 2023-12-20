@@ -9,6 +9,10 @@ The use case for this project is building an end to end solution by ingesting th
 </div>
 
 
+## Pipeline development
+
+The first step in developing a pipeline on Azure is to create a resource group that houses all the resources that will be used in the project.
+
 ## Overview of Azure Services used
 
 ### 1. Azure Data Factory
@@ -92,3 +96,8 @@ Power BI is a suite of business analytics tools that enables organizations to vi
 - **Data Visualization:** Create interactive and compelling visualizations from various data sources.
 - **Data Exploration:** Analyze data trends, patterns, and outliers.
 - **Collaboration:** Share reports and dashboards with stakeholders and collaborate in real-time.
+
+
+## Notes:
+
+- In setting up storage, make sure to enable **hierarchical namespace** since enabling the Hierarchical Namespace in Azure Storage enhances data organization, improves compatibility with existing tools and frameworks, and provides benefits for big data analytics workloads. It is particularly useful for organizations dealing with large-scale data storage and processing requirements.
